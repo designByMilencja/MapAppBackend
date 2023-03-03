@@ -7,3 +7,6 @@ export interface AdEntity {
    lat: number;
    lon: number;
 }
+export interface NewAddEntity extends Omit<AdEntity, "id"> {
+   id?: string;
+}
