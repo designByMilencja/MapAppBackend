@@ -1,4 +1,5 @@
 import {AdRecord} from "../records/ad-record";
+
 const defaultObj = {
     description: "opis",
     lat: 9,
@@ -14,7 +15,7 @@ test('Can build AdRecord', () => {
 });
 test('Validates invalid price', () => {
     expect(() => new AdRecord({
-    ...defaultObj,
-    price: -3
-})).toThrow('Cena ogłoszenia nie byc nizsza niz 0 ani wyższa niz 9999999')
+        ...defaultObj,
+        price: -3
+    })).toThrow('Cena ogłoszenia nie byc nizsza niz 0 ani wyższa niz 9999999')
 })

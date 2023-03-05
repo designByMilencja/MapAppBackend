@@ -40,10 +40,11 @@ export class AdRecord implements AdEntity {
         this.lon = lon;
         this.lat = lat;
     }
+
     static async getOne(id: string): Promise<AdRecord | null> {
-       const [results] = (await pool.execute('SELECT * FROM `ads` WHERE `id` = :id', {
-           id,
-       })) as AdRecordResults;
-       return results.length === 0 ? null : new AdRecord(results[0]);
+        const [results] = (await pool.execute('SELECT * FROM `ads` WHERE `id` = :id', {
+            id,
+        })) as AdRecordResults;
+        return results.length === 0 ? null : new AdRecord(results[0]);
     }
 }
